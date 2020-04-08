@@ -521,6 +521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6276301098256722671}
   - component: {fileID: 847961700}
+  - component: {fileID: 5476639879653117337}
   m_Layer: 0
   m_Name: QuadCube
   m_TagString: Untagged
@@ -561,6 +562,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapSize: 7.15
+--- !u!114 &5476639879653117337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3820746372032762445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25605eeb06c472d42a17571f828ad9f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6285840324325497766
 GameObject:
   m_ObjectHideFlags: 0

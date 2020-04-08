@@ -31,6 +31,9 @@ public class CubeEditor : MonoBehaviour
         snapPos.z = Mathf.RoundToInt(transform.position.z / snapSize) * snapSize;
 
         transform.position = new Vector3(snapPos.x, 0f, snapPos.z);
-        textMesh.text = snapPos.x / snapSize + " , " + snapPos.z / snapSize;
+
+        string labelText = snapPos.x / snapSize + " , " + snapPos.z / snapSize;
+        gameObject.name = labelText;
+        textMesh.text = labelText;
     }
 }
