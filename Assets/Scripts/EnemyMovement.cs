@@ -13,11 +13,13 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(FollowPath());
+        //StartCoroutine(FollowPath());
     }
 
+    /*
     IEnumerator FollowPath()
     {
+        
         print("Starting patrol...");
         foreach (WayPoint waypoint in path)
         {
@@ -27,4 +29,5 @@ public class EnemyMovement : MonoBehaviour
         }
         print("Ending patrol");
     }
+    */
 }

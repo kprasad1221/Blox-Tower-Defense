@@ -7,6 +7,7 @@ public class PathFinder : MonoBehaviour
 {
 
     Dictionary<Vector2Int, WayPoint> grid = new Dictionary<Vector2Int, WayPoint>();
+    [SerializeField] WayPoint startPoint, endPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class PathFinder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        startPoint.SetTopColor(Color.cyan);
+        endPoint.SetTopColor(Color.red);
     }
 }
