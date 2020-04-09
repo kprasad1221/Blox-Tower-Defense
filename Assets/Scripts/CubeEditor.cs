@@ -5,35 +5,50 @@ using TMPro;
 
 [ExecuteInEditMode]
 [SelectionBase]
+[RequireComponent(typeof(WayPoint))]
 
 public class CubeEditor : MonoBehaviour
 {
-    [Range(5f, 20f)] [SerializeField] float snapSize = 10f;
+    WayPoint wayPoint;
 
-    TextMeshPro textMesh;
+    private void Awake()
+    {
+        wayPoint = GetComponent<WayPoint>();
+    }
 
     private void Start()
     {
-        textMesh = GetComponentInChildren<TextMeshPro>();
-        print(textMesh);
-        textMesh.text = "test";
+
     }
 
     void Update()
     {
-        SnapBoxToGrid();
+        SnapToGrid();
+        UpdateLabel();
     }
 
-    private void SnapBoxToGrid()
+    private void SnapToGrid()
     {
-        Vector3 snapPos;
-        snapPos.x = Mathf.RoundToInt(transform.position.x / snapSize) * snapSize;
-        snapPos.z = Mathf.RoundToInt(transform.position.z / snapSize) * snapSize;
+        int gridSize = wayPoint.GetGridSize();
+        
+        transform.position = new Vector3(
+            wayPoint.GetGridPos().x, 
+            0f, 
+            wayPoint.GetGridPos().y);
+    }
 
-        transform.position = new Vector3(snapPos.x, 0f, snapPos.z);
+    private void UpdateLabel()
+    {
+        int gridSize = wayPoint.GetGridSize();
 
-        string labelText = snapPos.x / snapSize + " , " + snapPos.z / snapSize;
+        string labelText = 
+            wayPoint.GetGridPos().x / gridSize
+            + " , " 
+            + wayPoint.GetGridPos().y / gridSize;
+
         gameObject.name = labelText;
+
+        TextMeshPro textMesh = GetComponentInChildren<TextMeshPro>();
         textMesh.text = labelText;
     }
 }
