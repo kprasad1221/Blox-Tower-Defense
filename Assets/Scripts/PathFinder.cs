@@ -13,6 +13,7 @@ public class PathFinder : MonoBehaviour
     void Start()
     {
         LoadBlocks();
+        SetStartEndColors();
     }
 
     private void LoadBlocks()
@@ -35,6 +36,11 @@ public class PathFinder : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+
+    }
+
+    private void SetStartEndColors()
     {
         startPoint.SetTopColor(Color.cyan);
         endPoint.SetTopColor(Color.red);
