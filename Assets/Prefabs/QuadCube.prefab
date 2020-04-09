@@ -561,7 +561,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ebc371b1c366c4997a00fa4b5ad1a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapSize: 10
 --- !u!114 &5476639879653117337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,6 +573,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25605eeb06c472d42a17571f828ad9f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exploredColor: {r: 0.14809541, g: 0.8029232, b: 0.9811321, a: 0}
+  unexploredColor: {r: 0.8584906, g: 0.08098967, b: 0.16153397, a: 0}
+  isExplored: 0
+  exploredFrom: {fileID: 0}
 --- !u!1 &6285840324325497766
 GameObject:
   m_ObjectHideFlags: 0

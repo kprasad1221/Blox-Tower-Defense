@@ -7,8 +7,25 @@ public class WayPoint : MonoBehaviour
 
     const int gridSize = 10;
     Vector2Int gridPos;
+    [SerializeField] Color exploredColor, unexploredColor;
+    [SerializeField] bool showIfExplored = false;
     public bool isExplored = false;
+    public WayPoint exploredFrom;
 
+    private void Update()
+    {
+        if (showIfExplored)
+        {
+            if (isExplored)
+            {
+                SetTopColor(exploredColor);
+            }
+            else
+            {
+                SetTopColor(unexploredColor);
+            }
+        }
+    }
     public int GetGridSize()
     {
         return gridSize;
