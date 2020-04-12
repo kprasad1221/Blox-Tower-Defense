@@ -235,6 +235,19 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   m_maskType: 0
+--- !u!65 &7196357267085385352
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457945756114618}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20, z: 20}
+  m_Center: {x: 0, y: 10, z: 0}
 --- !u!1 &3820746372032762445
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +259,7 @@ GameObject:
   - component: {fileID: 6276301098256722671}
   - component: {fileID: 847961700}
   - component: {fileID: 5476639879653117337}
+  - component: {fileID: 6475442188033789330}
   m_Layer: 0
   m_Name: QuadCube
   m_TagString: Untagged
@@ -298,6 +312,19 @@ MonoBehaviour:
   showIfExplored: 0
   isExplored: 0
   exploredFrom: {fileID: 0}
+--- !u!65 &6475442188033789330
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3820746372032762445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1 &9069101525118282821
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,6 +487,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f27a4597efbf3694b95687e7aeef7fcc, type: 3}
+--- !u!1 &1457945756114618 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1457945536329988, guid: f27a4597efbf3694b95687e7aeef7fcc,
+    type: 3}
+  m_PrefabInstance: {fileID: 388917182}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4501762685620800 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4501762900964862, guid: f27a4597efbf3694b95687e7aeef7fcc,
