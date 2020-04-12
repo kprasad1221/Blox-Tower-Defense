@@ -6,13 +6,21 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     [SerializeField] Transform objectToPan, targetEnemy;
-    [SerializeField] GameObject gun;
-    [SerializeField] float targetingDistance = 25f;
+    [SerializeField] ParticleSystem gun;
+    [SerializeField] float attackRange = 30f;
+    [SerializeField] int damagePerHit;
 
     void Update()
     {
-        AimAtEnemies();
-        ShootEnemies();
+        if (targetEnemy)
+        {
+            AimAtEnemies();
+            ShootEnemies();
+        }
+        else
+        {
+            Shoot(false);
+        }
     }
 
     private void AimAtEnemies()
@@ -24,14 +32,20 @@ public class Tower : MonoBehaviour
     {
         float distanceFromEnemy = CheckEnemyDistance();
 
-        if(distanceFromEnemy <= targetingDistance)
+        if(distanceFromEnemy <= attackRange)
         {
-            FireGun();
+            Shoot(true);
         }
         else
         {
-            DisableGun();
+            Shoot(false);
         }
+    }
+
+    private void Shoot(bool isActive)
+    {
+        var gunFire = gun.emission;
+        gunFire.enabled = isActive;
     }
 
     private float CheckEnemyDistance()
@@ -40,13 +54,8 @@ public class Tower : MonoBehaviour
         return Vector3.Distance(transform.position, targetEnemy.position);
     }
 
-    private void FireGun()
+    public int getDamagePerHit()
     {
-        gun.SetActive(true);
-    }
-
-    private void DisableGun()
-    {
-        gun.SetActive(false);
+        return damagePerHit;
     }
 }

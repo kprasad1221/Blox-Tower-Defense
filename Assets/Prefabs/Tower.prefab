@@ -47,7 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToPan: {fileID: 8083110785224696283}
   targetEnemy: {fileID: 0}
-  gun: {fileID: 3541172758712235256}
+  gun: {fileID: 2008388852674446095}
+  attackRange: 30
+  damagePerHit: 1
 --- !u!1001 &8080135235502036403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -210,6 +212,56 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullets
       objectReference: {fileID: 0}
+    - target: {fileID: 7935819662774080739, guid: 6454acb1222731b4987278a1cd31d3a4,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7935819662774080739, guid: 6454acb1222731b4987278a1cd31d3a4,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7935819662774080739, guid: 6454acb1222731b4987278a1cd31d3a4,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7935819662774080739, guid: 6454acb1222731b4987278a1cd31d3a4,
+        type: 3}
+      propertyPath: ShapeModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7935819662774080739, guid: 6454acb1222731b4987278a1cd31d3a4,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7935819662774080739, guid: 6454acb1222731b4987278a1cd31d3a4,
+        type: 3}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7935819662774080739, guid: 6454acb1222731b4987278a1cd31d3a4,
+        type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985100325182634958, guid: 6454acb1222731b4987278a1cd31d3a4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f06ebfdab214dd144b602f466c6a5cd1, type: 2}
+    - target: {fileID: 5985100325182634958, guid: 6454acb1222731b4987278a1cd31d3a4,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985100325182634958, guid: 6454acb1222731b4987278a1cd31d3a4,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 5549540205248383692, guid: 6454acb1222731b4987278a1cd31d3a4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -267,9 +319,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6454acb1222731b4987278a1cd31d3a4, type: 3}
---- !u!1 &3541172758712235256 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4961364981122818836, guid: 6454acb1222731b4987278a1cd31d3a4,
+--- !u!198 &2008388852674446095 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7935819662774080739, guid: 6454acb1222731b4987278a1cd31d3a4,
     type: 3}
   m_PrefabInstance: {fileID: 8502385932596828140}
   m_PrefabAsset: {fileID: 0}

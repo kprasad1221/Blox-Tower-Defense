@@ -26,8 +26,14 @@ public class EnemyHealthControls : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         print("collided with " + gameObject.name);
-        enemyHitPoints = enemyHitPoints - 1;
-        if(enemyHitPoints <= 1)
+        ProcessHit(other);
+    }
+
+    private void ProcessHit(GameObject other)
+    {
+        int damagePerHit = other.GetComponentInParent<Tower>().getDamagePerHit();
+        enemyHitPoints = enemyHitPoints - damagePerHit;
+        if (enemyHitPoints <= 1)
         {
             DestroyEnemy();
         }
@@ -36,6 +42,7 @@ public class EnemyHealthControls : MonoBehaviour
     private void DestroyEnemy()
     {
         GameObject deathFX = Instantiate(explosionFX, transform.position, Quaternion.identity);
+        deathFX.SetActive(true);
         deathFX.transform.parent = parent;
         deathFX.name = gameObject.name + "_Explosion";
         Destroy(gameObject);
