@@ -7,9 +7,11 @@ public class EnemyHealthControls : MonoBehaviour
 {
     [SerializeField] int enemyHitPoints = 4;
     [SerializeField] int scorePerEnemy = 12;
-    [SerializeField] GameObject enemyHitFX;
+    [SerializeField] ParticleSystem enemyHitFX;
     [SerializeField] GameObject explosionDeathFX;
     [SerializeField] Transform explosionDeathParent;
+
+    [SerializeField] float destroyDelay = 1.5f;
 
     //ScoreBoard scoreBoard;  TODO - create a scoreboard
 
@@ -26,13 +28,13 @@ public class EnemyHealthControls : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        print("collided with " + gameObject.name);
         ProcessHit(other);
     }
 
     private void ProcessHit(GameObject other)
     {
         int damagePerHit = other.GetComponentInParent<Tower>().getDamagePerHit();
+        enemyHitFX.Play();
         enemyHitPoints = enemyHitPoints - damagePerHit;
         if (enemyHitPoints <= 1)
         {
@@ -42,10 +44,11 @@ public class EnemyHealthControls : MonoBehaviour
 
     private void DestroyEnemy()
     {
-        GameObject deathFX = Instantiate(explosionDeathFX, transform.position, Quaternion.identity);
-        deathFX.SetActive(true);
-        deathFX.transform.parent = explosionDeathParent;
+        ParticleSystem deathFX = Instantiate(explosionDeathFX.GetComponent<ParticleSystem>(), transform.position, Quaternion.identity);
+        deathFX.transform.parent = transform;
         deathFX.name = gameObject.name + "_Explosion";
+
+        
         Destroy(gameObject);
     }
 }

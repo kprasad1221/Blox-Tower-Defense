@@ -10,6 +10,8 @@ public class Tower : MonoBehaviour
     [SerializeField] float attackRange = 30f;
     [SerializeField] int damagePerHit;
 
+    public WayPoint baseWaypoint;
+
     Transform targetEnemy;
 
     void Update()
@@ -62,9 +64,9 @@ public class Tower : MonoBehaviour
 
     private void ShootEnemies()
     {
-        float distanceFromEnemy = CheckEnemyDistance();
+        float distanceFromEnemy = Vector3.Distance(transform.position, targetEnemy.position);
 
-        if(distanceFromEnemy <= attackRange)
+        if (distanceFromEnemy <= attackRange)
         {
             Shoot(true);
         }
@@ -78,12 +80,6 @@ public class Tower : MonoBehaviour
     {
         var gunFire = gun.emission;
         gunFire.enabled = isActive;
-    }
-
-    private float CheckEnemyDistance()
-    {
-        print(Vector3.Distance(transform.position, targetEnemy.position));
-        return Vector3.Distance(transform.position, targetEnemy.position);
     }
 
     public int getDamagePerHit()

@@ -44,14 +44,12 @@ public class PathFinder : MonoBehaviour
             Vector2Int gridPos = wayPoint.GetGridPos();
             if (grid.ContainsKey(gridPos))
             {
-                Debug.LogWarning("Overlapping block: " + wayPoint);
             }
             else
             {
                 grid.Add(gridPos, wayPoint);
             }     
         }
-        //print(grid.Count);
     }
 
     private void SetStartEndColors()
@@ -77,7 +75,6 @@ public class PathFinder : MonoBehaviour
     {
         if(searchCenter == endPoint)
         {
-            print("Searching from end node, therefore stopping");
             isRunning = false;
         }
     }
