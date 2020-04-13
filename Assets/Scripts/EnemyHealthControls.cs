@@ -7,8 +7,9 @@ public class EnemyHealthControls : MonoBehaviour
 {
     [SerializeField] int enemyHitPoints = 4;
     [SerializeField] int scorePerEnemy = 12;
-    [SerializeField] GameObject explosionFX;
-    [SerializeField] Transform parent;
+    [SerializeField] GameObject enemyHitFX;
+    [SerializeField] GameObject explosionDeathFX;
+    [SerializeField] Transform explosionDeathParent;
 
     //ScoreBoard scoreBoard;  TODO - create a scoreboard
 
@@ -41,9 +42,9 @@ public class EnemyHealthControls : MonoBehaviour
 
     private void DestroyEnemy()
     {
-        GameObject deathFX = Instantiate(explosionFX, transform.position, Quaternion.identity);
+        GameObject deathFX = Instantiate(explosionDeathFX, transform.position, Quaternion.identity);
         deathFX.SetActive(true);
-        deathFX.transform.parent = parent;
+        deathFX.transform.parent = explosionDeathParent;
         deathFX.name = gameObject.name + "_Explosion";
         Destroy(gameObject);
     }
