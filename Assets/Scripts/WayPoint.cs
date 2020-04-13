@@ -50,9 +50,16 @@ public class WayPoint : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0)) // left click
+        if (Input.GetMouseButtonDown(0) && isPlaceable) // left click
         {
-            Debug.Log("clicked " + gameObject.name);
+            if (isPlaceable)
+            {
+                Debug.Log("Placing on " + gameObject.name);
+            }
+            else
+            {
+                Debug.Log("Cannot place here on " + gameObject.name);
+            }
         }
     }
 }
