@@ -117,8 +117,8 @@ public class PathFinder : MonoBehaviour
         WayPoint previous = endPoint.exploredFrom;
         while (previous != startPoint)
         {
-            previous = previous.exploredFrom;
             SetAsPath(previous);
+            previous = previous.exploredFrom;
         }
         SetAsPath(startPoint);
         path.Reverse();
