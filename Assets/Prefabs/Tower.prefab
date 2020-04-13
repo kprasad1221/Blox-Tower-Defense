@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPan: {fileID: 8083110785224696283}
-  targetEnemy: {fileID: 0}
   gun: {fileID: 2008388852674446095}
   attackRange: 30
   damagePerHit: 1
@@ -247,21 +246,6 @@ PrefabInstance:
       propertyPath: CollisionModule.collisionMessages
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5985100325182634958, guid: 6454acb1222731b4987278a1cd31d3a4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f06ebfdab214dd144b602f466c6a5cd1, type: 2}
-    - target: {fileID: 5985100325182634958, guid: 6454acb1222731b4987278a1cd31d3a4,
-        type: 3}
-      propertyPath: m_RenderMode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5985100325182634958, guid: 6454acb1222731b4987278a1cd31d3a4,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 5549540205248383692, guid: 6454acb1222731b4987278a1cd31d3a4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -317,6 +301,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5985100325182634958, guid: 6454acb1222731b4987278a1cd31d3a4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f06ebfdab214dd144b602f466c6a5cd1, type: 2}
+    - target: {fileID: 5985100325182634958, guid: 6454acb1222731b4987278a1cd31d3a4,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985100325182634958, guid: 6454acb1222731b4987278a1cd31d3a4,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6454acb1222731b4987278a1cd31d3a4, type: 3}
 --- !u!198 &2008388852674446095 stripped

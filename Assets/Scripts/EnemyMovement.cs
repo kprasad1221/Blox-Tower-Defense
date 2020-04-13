@@ -6,11 +6,12 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] float moveDelay = 1f;
+    [SerializeField] List<WayPoint> path;
 
     void Start()
     {
         PathFinder pathFinder = FindObjectOfType<PathFinder>();
-        List<WayPoint> path = pathFinder.GetPath();
+        path = pathFinder.GetPath();
         StartCoroutine(FollowPath(path));
     }
 
