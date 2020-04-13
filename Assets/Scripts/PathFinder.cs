@@ -113,14 +113,20 @@ public class PathFinder : MonoBehaviour
 
     private void FormPath()
     {
-        path.Add(endPoint);
+        SetAsPath(endPoint);
         WayPoint previous = endPoint.exploredFrom;
-        while(previous != startPoint)
+        while (previous != startPoint)
         {
-            path.Add(previous);
             previous = previous.exploredFrom;
+            SetAsPath(previous);
         }
-        path.Add(startPoint);
+        SetAsPath(startPoint);
         path.Reverse();
+    }
+
+    private void SetAsPath(WayPoint wayPoint)
+    {
+        path.Add(wayPoint);
+        wayPoint.isPlaceable = false;
     }
 }

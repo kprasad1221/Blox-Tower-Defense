@@ -11,6 +11,7 @@ public class WayPoint : MonoBehaviour
     [SerializeField] Color exploredColor, unexploredColor;
     [SerializeField] bool showIfExplored = false;
     public bool isExplored = false;
+    public bool isPlaceable = true;
     public WayPoint exploredFrom;
 
     private void Update()
@@ -49,6 +50,9 @@ public class WayPoint : MonoBehaviour
 
     private void OnMouseOver()
     {
-        Debug.Log("Mouse is over " + gameObject.name);
+        if (Input.GetMouseButtonDown(0)) // left click
+        {
+            Debug.Log("clicked " + gameObject.name);
+        }
     }
 }
